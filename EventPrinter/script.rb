@@ -44,7 +44,7 @@ if $TEST
       #--------------------------------------------------------------------------
       def self.get_color(color)
         self.const_get(color.to_s.capitalize.intern)
-      end    
+      end
       #---------------------------------------------------------------------------------------------
       # * Color constants
       #---------------------------------------------------------------------------------------------
@@ -54,15 +54,15 @@ if $TEST
       Events = "#800000"
       Comments = "#00A000"
       Musics = "#008080"
-      Battle = "#9000D0"    
-      Game = "#2090FF"      
-      Parameters = "#A0A0A0"      
-      Text = "#000080"      
-      Variables = "#FF0000"    
-      Pictures = "#800080"    
-      Manage = "#DC6E00"    
-      System = "#FF00FF"    
-      Script = "#808080"        
+      Battle = "#9000D0"
+      Game = "#2090FF"
+      Parameters = "#A0A0A0"
+      Text = "#000080"
+      Variables = "#FF0000"
+      Pictures = "#800080"
+      Manage = "#DC6E00"
+      System = "#FF00FF"
+      Script = "#808080"
       Graphics = "#FF00A0"
       Wait = "#C03000"
     end
@@ -85,62 +85,62 @@ if $TEST
       Wait = "Attendre : %d Frames"
       SwitchOnOff = ["Désactiver", "Activer"]
       WaitEnd = ", Attendre"
-      
+
       # Battlers
-      Attributes = ["Niveau", "Expérience", "PV", "PM", "PV Maximum", "PM Maximum", 
+      Attributes = ["Niveau", "Expérience", "PV", "PM", "PV Maximum", "PM Maximum",
               "Attaque", "Défense", "Magie", "Déf. Magique", "Agilité", "Chance"]
-      
+
       # Evenements
       HeroEvent = "Héros"
       ThisEvent = "Cet événement"
-      
+
       # Dialogues
       Message =  "Message :"
       MessageParams = "%s, %s, %s, %s"
       MessagePosition = ["Bas", "Milleu", "Haut"]
       MessageDisplay = ["Normal", "Transparent", "Sombre"]
       Void = "Ø"
-      
+
       Choices = "Afficher Choix :"
       Choice = "Si %s - Faire"
       CancelChoice = "Annulation"
       EndChoice = "Fin - Choix"
-      
+
       GetVar = "Entrer un Nombre - Stocker dans la variable %s, %d Chiffre(s)"
-      
+
       SelectItem = "Sélection d'un objet : %s"
-      
+
       DisplayScrollingText = "Afficher un texte défilant :"
       ScrollSpeed = "Vitesse %d"
       DisableFastForward = ", Désactiver l'avance rapide"
-      
+
       # Operations on variables
       Operation = "Opération :"
-      
+
       Switch = "Interrupteur"
       LocalSwitch = "Interrupteur local"
       OnOff = ["Activé", "Désactivé"]
-      
+
       Variable = "Variable"
       ValueOfVariable = "(la valeur de la variable %s)"
       RandomValue = "(valeur aléatoire entre %d et %d)"
       NumberOf = "%s possédés"
       EventParam = ["Coordonée X", "Coordonée Y", "Direction", "Coordonée X à l'écran", "Coordonée Y à l'écran"]
-      OtherVariable = ["ID de la carte", "Nombre de personnage dans l'équipe", "Argent possédé", 
+      OtherVariable = ["ID de la carte", "Nombre de personnage dans l'équipe", "Argent possédé",
             "Nombre total de pas", "Temps de jeu", "Chronomètre", "Nombre de sauvegardes", "Nombre de combats"]
       IdOfAMember = "ID du %s membre"
       OrdinalNumber = ["1er", "2ème", "3ème", "4ème", "5ème", "6ème", "7ème", "8ème"]
-      
+
       Chronometer = "Gestion  du Chronomètre :"
       LeChronometer = "le Chronomètre est"
       Time = "à %d Minutes et %d Secondes"
       Start = "Démarrer (" + Time + ")"
       Stop = "Arrêter"
-      
+
       # Conditions
       Condition = "Condition :"
       ComparationOperator = ["==", ">=", "<=", ">", "<", "!="]
-      HeroConditions = ["est dans l'équipe", "a pour nom '%s'", "a comme classe %s", "a la compétence %s", 
+      HeroConditions = ["est dans l'équipe", "a pour nom '%s'", "a comme classe %s", "a la compétence %s",
           "est équipé avec l'arme %s", "est équipé avec l'armure %s", "est sous l'effet de statut %s"]
       MoneyCondition = "l'argent possédé est de %d %s"
       ItemCondition = "l'objet %s est possédé"
@@ -153,22 +153,22 @@ if $TEST
       ScriptCondition = "Script : %s"
       Else = "Sinon"
       EndCondition = "Fin - Condition"
-      
+
       # Functions
       CommonEventCall = "Appeler Événement Commun :"
-      
+
       Loop = "Boucle"
       EndLoop = "Fin - Boucle"
       ExitLoop = "Sortir de la Boucle"
-      
+
       Goto = "Étiquette :"
-      GotoCall = "Aller à l'Étiquette :"      
-      
+      GotoCall = "Aller à l'Étiquette :"
+
       StopEvents = "Arrêter les évènements"
-      
+
       Comment = "Commentaire :"
-      
-      
+
+
       # Music / Video
       Music = "'%s', Volume : %d, Tempo : %d"
       BGM = "Jouer BGM :"
@@ -181,7 +181,7 @@ if $TEST
       StopBGS = "Arrêter en fondu du BGS : %s Secondes"
       StopSE = "Arrêter SE"
       PlayVideo = "Jouer une vidéo : '%s'"
-      
+
       # Battle
       Battle = "Démarrer un combat : %s"
       BattleIndexed = "(Indexé par [%04d])"
@@ -191,7 +191,7 @@ if $TEST
       EndBattle = "Fin - Combat"
       AllEnemies = "Tous les ennemis"
       Enemy = "[%d. %s]"
-      
+
       # Game
       Shop = "Appeler magasin :"
       EnterName = "Enter le nom d'un personnage : %s, %d Lettres"
@@ -199,8 +199,8 @@ if $TEST
       OpenSave = "Ouvrir le menu de sauvegarde"
       GameOver = "Game Over"
       ToTitle = "Retourner à l'écran titre"
-      
-      # System  
+
+      # System
       ModifyBGM = "Modifier BGM de combat :"
       ModifyME = "Modifier ME de victoire :"
       ModifiySave = "Modifier l'accès aux sauvegardes :"
@@ -210,10 +210,10 @@ if $TEST
       WindowColor = "Affichage du nom de la carte : %s"
       ModifyHeroAppearance = "Modifier Apparence Personnage : %s, Charset:'%s', 0, Faceset:'%s', 0"
       ModifyVehicleAppearance = "Modifier Apparence Véhicule : [%s], '%s', 0"
-      
+
       # Script
       ScriptCall = "Appeler Script :"
-      
+
       # Manage
       WholeTeam = "Équipe Entière"
       ModifyMoney = "Modifier Argent :"
@@ -237,9 +237,9 @@ if $TEST
       ModifyHeroClass = "Modifier Classe Personnage : %s,"
       RestoreEnemy = "Récupération Complète - "
       PlusOrMinus = ["+", "-"]
-      AddOrRemove = ["Ajouter", "Retirer"] 
-      Equipement = ["Armes", "Bouclier", "Casque", "Armure", "Accessoire"]     
-      
+      AddOrRemove = ["Ajouter", "Retirer"]
+      Equipement = ["Armes", "Bouclier", "Casque", "Armure", "Accessoire"]
+
       # Battle
       ModifyHPEnemy = "Modifier PV - Ennemi : %s,"
       ModifyMPEnemy = "Modifier PM - Ennemi  : %s,"
@@ -261,31 +261,31 @@ if $TEST
       PlaceEvent = "Placer événement : %s, %s"
       SwapPositions = "échanger la position avec [%s]"
       Position = ["(X: %03d, Y: %03d)", "X: [%04d], Y: [%04d]", "échanger la position avec %s"]
-      
-      # Deplacement 
+
+      # Deplacement
       IsLooking = "Regarde vers"
       Direction = {0 => "", 2 => ", le Bas", 4 => ", la Gauche", 6 => ", la Droite", 8 => ", le Haut"}
-      
+
       # Input
       Inputs = { 2 =>"Bas", 4 => "Gauche", 6 => "Droite", 8 => "Haut", 11 => "A", 12 => "B", 13 => "C", 14 => "X",
           15 => "Y", 16 => "Z", 17 => "L", 18 => "R" }
-          
+
       # Move route
       MoveEvent = "Déplacer évènement :"
       MoveRouteParams = ["Répéter", "Ignorer action impossible", "Attendre la fin"]
-      MoveRouteCommands = ["", "Un pas vers le Bas", "Un pas vers la Gauche", "Un pas vers la Droite", 
-      "Un pas vers le Haut", "Un pas vers Bas-Gauche", "Un pas vers Bas-Droite", "Un pas vers Haut-Gauche", 
-      "Un pas vers Haut-Droite", "Un pas au Hasard", "Un pas vers le Héros",  "Fuis le héros d'un pas",  
-      "Un pas en Avant",  "Un pas en Arrière", "Saut : %s en X, %s en Y", "Attendre : %d Frames", 
-      "Regarde vers le Bas", "Regarde vers la Gauche", "Regarde vers la Droite", "Regarde vers le Haut", 
-      "Quart de tour à Droite", "Quart de tour à Gauche", "Demi tour", "Quart de tour au Hasard", 
-      "Regarde Direction Aléat.", "Regarde vers le héros", "Se détourne du héros", "Active Inter. : %04d", 
-      "Désactive Inter. : %04d", "Modifier Vitesse. : %d", "Modifier Fréquence : %d", "Marche animée ON", 
-      "Marche animée OFF", "Animé à l'arrêt ON", "Animé à l'arrêt OFF", "Direction fixe ON", "Direction fixe OFF", 
-      "Passe-muraille ON", "Passe-muraille OFF", "Transparent ON", "Transparent OFF", "Modifier charset : %s", 
-      "Modifier opacité : %d", "Modifier transp. : %s", "Jouer un SE : %s", 
+      MoveRouteCommands = ["", "Un pas vers le Bas", "Un pas vers la Gauche", "Un pas vers la Droite",
+      "Un pas vers le Haut", "Un pas vers Bas-Gauche", "Un pas vers Bas-Droite", "Un pas vers Haut-Gauche",
+      "Un pas vers Haut-Droite", "Un pas au Hasard", "Un pas vers le Héros",  "Fuis le héros d'un pas",
+      "Un pas en Avant",  "Un pas en Arrière", "Saut : %s en X, %s en Y", "Attendre : %d Frames",
+      "Regarde vers le Bas", "Regarde vers la Gauche", "Regarde vers la Droite", "Regarde vers le Haut",
+      "Quart de tour à Droite", "Quart de tour à Gauche", "Demi tour", "Quart de tour au Hasard",
+      "Regarde Direction Aléat.", "Regarde vers le héros", "Se détourne du héros", "Active Inter. : %04d",
+      "Désactive Inter. : %04d", "Modifier Vitesse. : %d", "Modifier Fréquence : %d", "Marche animée ON",
+      "Marche animée OFF", "Animé à l'arrêt ON", "Animé à l'arrêt OFF", "Direction fixe ON", "Direction fixe OFF",
+      "Passe-muraille ON", "Passe-muraille OFF", "Transparent ON", "Transparent OFF", "Modifier charset : %s",
+      "Modifier opacité : %d", "Modifier transp. : %s", "Jouer un SE : %s",
       "Appeller Script : %s"]
-      
+
       # Visual
       Caterpillar = "Chenille :"
       RegroupCaterpillar = "Regrouper la chenille"
@@ -293,18 +293,18 @@ if $TEST
       ScrollMap = "Faire défiler la carte vers"
       ScrollMapParams = "de %d carreaux, vitesse %d"
       EnterExitVehicle = "Entrer/Sortir du véhicule"
-      
+
       Opacity = ["Transparent", "Opaque"]
       SetOpacity = "Transparence du héros :"
       DisplayAnimation = "Afficher une animation : Cible - %s,"
       DisplayEmote = "Afficher une émoticône : Cible - %s,"
       DeleteEvent = "Effacer cet événement"
-      Emotes = ["Exclamation", "Interrogation", "Note de Musique", "Coeur", "Colère", 
+      Emotes = ["Exclamation", "Interrogation", "Note de Musique", "Coeur", "Colère",
         "Goute", "Toile", "Silence", "Ampoule", "Zzz"]
-        
+
       # Appearance
       None = "(aucun)"
-      
+
       # Visual Effects
       Color = ["(R:%d,V:%d,B:%d,I:%d)", "(R:%d,V:%d,B:%d)"]
       Tone = "(R:%d,V:%d,B:%d,G:%d)"
@@ -313,7 +313,7 @@ if $TEST
       ScreenTone = "Ton de l'écran : %s, %d Frames%s"
       FlashScreen = "Flasher l'écran : %s, %d Frames%s"
       ShakeScreen = "Secouer l'écran : Force %d, Vitesse %d, %d Frames%s"
-      
+
       # Pictures
       DisplayPicture = "Afficher une image : %d, '%s', %s %s, (%d%%,%d%%), %d, %s"
       MovePicture = "Afficher une image : %d, '%s', %s %s, (%d%%,%d%%), %d, %s, %d Frames%s"
@@ -323,7 +323,7 @@ if $TEST
       DeletePicture = "Effacer Image : %d"
       WeatherEffect = "Effet Météorologique : %s, %d Frames%s"
       Weather = {none: "Aucun", rain: "Pluie, %d", storm: "Orage, %d", snow: "Neige, %d"}
-      
+
       # Graphics
       DisplayMapName = "Affichage du nom de la carte :"
       ChangeTileset = "Changer de tileset :"
@@ -332,7 +332,7 @@ if $TEST
       GetInformation = "Récupérer des informations : [%04d], %s,"
       GetInformationCoord = ["(%03d,%03d)", "Variable [%04d][%04d]"]
 
-      
+
       #--------------------------------------------------------------------------
       # Window Vocab
       #--------------------------------------------------------------------------
@@ -343,8 +343,8 @@ if $TEST
         # WindowType content
         Types = {map: "Events", common: "Events commun", battle: "Events de combat"}
         # WindowMode content
-        Modes = {print_raw: "En brut - Dans un fichier", copy_raw: "En brut - Dans le presse-papier", 
-                print_bbcode: "En BBcode - Dans un fichier", copy_bbcode: "En BBcode - Dans le presse-papier", 
+        Modes = {print_raw: "En brut - Dans un fichier", copy_raw: "En brut - Dans le presse-papier",
+                print_bbcode: "En BBcode - Dans un fichier", copy_bbcode: "En BBcode - Dans le presse-papier",
                 print_html: "En HTML - Dans un fichier", copy_html: "En HTML - Dans le presse-papier"}
         # Page Name for WindowPage
         PageName = "Page n°%03d"
@@ -431,7 +431,7 @@ if $TEST
         sprintf(Vocab::Enemy, id + 1, event.troop.empty? ? "" : enemy_name(event.troop[id].enemy_id, false))
       end
       #--------------------------------------------------------------------------
-      # * Get a certain type of item name 
+      # * Get a certain type of item name
       #   **(type : 0 => Item, 1 => Weapon, 2 => Armor)
       #--------------------------------------------------------------------------
        def base_item_name(type, id)
@@ -481,7 +481,7 @@ if $TEST
         name($data_common_events[id].name)
       end
       #--------------------------------------------------------------------------
-      # * Get animation name 
+      # * Get animation name
       #--------------------------------------------------------------------------
       def animation_name(id)
         name($data_animations[id].name)
@@ -529,20 +529,20 @@ if $TEST
       CommandHash = {
         0 => ->(params, event){ [true] },
         101 => ->(params, event){ [true,
-          {color: :standard,    text: EventPrinter::Vocab::Message}, 
-          {color: :parameters, text: sprintf(EventPrinter::Vocab::MessageParams, 
-            params[0].empty? ? EventPrinter::Vocab::Void : "'#{params[0]}'", params[0].empty? ? 
-            EventPrinter::Vocab::Void : params[1].to_s, EventPrinter::Vocab::MessageDisplay[params[2]], 
+          {color: :standard,    text: EventPrinter::Vocab::Message},
+          {color: :parameters, text: sprintf(EventPrinter::Vocab::MessageParams,
+            params[0].empty? ? EventPrinter::Vocab::Void : "'#{params[0]}'", params[0].empty? ?
+            EventPrinter::Vocab::Void : params[1].to_s, EventPrinter::Vocab::MessageDisplay[params[2]],
             EventPrinter::Vocab::MessagePosition[params[3]])}
           ]},
         102 => ->(params, event){ [true,
           {color: :standard, text: EventPrinter::Vocab::Choices},
           {color: :text,           text: params[0].join(", ")}] },
         103 => ->(params, event){ [true,
-          {color: :standard, text: sprintf(EventPrinter::Vocab::GetVar, 
+          {color: :standard, text: sprintf(EventPrinter::Vocab::GetVar,
             EventPrinter::Utilities::variable_name(params[0]), params[1])}] },
         104 => ->(params, event){ [true,
-          {color: :standard, text: sprintf(EventPrinter::Vocab::SelectItem, 
+          {color: :standard, text: sprintf(EventPrinter::Vocab::SelectItem,
             EventPrinter::Utilities::variable_name(params[0]))}] },
         105 => ->(params, event){ [true,
           {color: :standard, text: EventPrinter::Vocab::DisplayScrollingText},
@@ -581,17 +581,17 @@ if $TEST
           {color: :variables, text: EventPrinter::Vocab::Operation},
           {color: :variables, text: EventPrinter::Vocab::Variable},
           {color: :variables, text: EventPrinter::Utilities::group_or_uniq(params[0], params[1], false)},
-          {color: :variables, text: EventPrinter::Vocab::Operators[params[2]]}, 
+          {color: :variables, text: EventPrinter::Vocab::Operators[params[2]]},
           {color: :variables, text: OperandArray[params[3]].call(params[4..-1], event)} ]},
         123 => ->(params, event){ [true,
           {color: :variables, text: EventPrinter::Vocab::Operation},
           {color: :variables, text: EventPrinter::Vocab::LocalSwitch},
           {color: :variables, text: params[0]},
-          {color: :variables, text: EventPrinter::Vocab::Operators[0]}, 
+          {color: :variables, text: EventPrinter::Vocab::Operators[0]},
           {color: :variables, text: EventPrinter::Vocab::OnOff[params[1]]}]},
         124 => ->(params, event){ [true,
           {color: :variables, text: EventPrinter::Vocab::Chronometer},
-          {color: :variables, text: params[0] == 0 ? sprintf(EventPrinter::Vocab::Start, 
+          {color: :variables, text: params[0] == 0 ? sprintf(EventPrinter::Vocab::Start,
             params[1] / 60, params[1] % 60) : EventPrinter::Vocab::Stop
           }] },
         125 => ->(params, event){ [true,
@@ -627,37 +627,37 @@ if $TEST
           {color: :manage, text: sprintf(
             params[1] == 0 && params[2] == 1 ? EventPrinter::Vocab::ModifyPartyTextWithReset : "%s",
             EventPrinter::Utilities::hero_name(params[0]))}
-          ] }, 
+          ] },
         132 => ->(params, event){ [true,
           {color: :system, text: EventPrinter::Vocab::ModifyBGM},
           {color: :system, text: params[0].to_string_params}
-          ] },  
+          ] },
         133 => ->(params, event){ [true,
           {color: :system, text: EventPrinter::Vocab::ModifyME},
           {color: :system, text: params[0].to_string_params}
-          ] },  
+          ] },
         134 => ->(params, event){ [true,
           {color: :system, text: EventPrinter::Vocab::ModifiySave},
           {color: :system, text: EventPrinter::Vocab::SwitchOnOff[params[0]]}
-          ] },  
+          ] },
         135 => ->(params, event){ [true,
           {color: :system, text: EventPrinter::Vocab::ModifiyMenu},
           {color: :system, text: EventPrinter::Vocab::SwitchOnOff[params[0]]}
-          ] },  
+          ] },
         136 => ->(params, event){ [true,
           {color: :system, text: EventPrinter::Vocab::ModifiyEncounter},
           {color: :system, text: EventPrinter::Vocab::SwitchOnOff[params[0]]}
-          ] },  
+          ] },
         137 => ->(params, event){ [true,
           {color: :system, text: EventPrinter::Vocab::ModifiyFormation},
           {color: :system, text: EventPrinter::Vocab::SwitchOnOff[params[0]]}
-          ] },  
+          ] },
         138 => ->(params, event){ [true,
           {color: :system, text: sprintf(EventPrinter::Vocab::WindowColor, params[0].to_string_params)}
-          ] },  
+          ] },
         201 => ->(params, event){ [true,
           {color: :events, text: EventPrinter::Vocab::Warp},
-          {color: :events, text: WarpText[params[0]].call(params[1..-1]) + 
+          {color: :events, text: WarpText[params[0]].call(params[1..-1]) +
             EventPrinter::Vocab::Direction[params[4]] }
           ] },
         202 => ->(params, event){ [true,
@@ -666,9 +666,9 @@ if $TEST
           {color: :events, text: WarpText[params[1]].call(params[2..-1])}
         ] },
         203 => ->(params, event){ [true,
-          {color: :events, text: (sprintf(EventPrinter::Vocab::PlaceEvent, 
+          {color: :events, text: (sprintf(EventPrinter::Vocab::PlaceEvent,
             EventPrinter::Utilities::event_name(params[0], event.map), PositionArray[params[1]].call(params[2..-1], event)
-            ) + EventPrinter::Vocab::Direction[params[4]])} 
+            ) + EventPrinter::Vocab::Direction[params[4]])}
         ]},
         204 => ->(params, event){ [true,
           {color: :events, text: EventPrinter::Vocab::ScrollMap},
@@ -686,12 +686,12 @@ if $TEST
           {color: :events, text: EventPrinter::Vocab::Opacity[params[0]]}
         ]},
         212 => ->(params, event){ [true,
-          {color: :events, text: sprintf(EventPrinter::Vocab::DisplayAnimation, 
+          {color: :events, text: sprintf(EventPrinter::Vocab::DisplayAnimation,
             EventPrinter::Utilities::event_name(params[0], event.map))},
           {color: :events, text: EventPrinter::Utilities::animation_name(params[1])}
         ]},
         213 => ->(params, event){ [true,
-          {color: :events, text: sprintf(EventPrinter::Vocab::DisplayEmote, 
+          {color: :events, text: sprintf(EventPrinter::Vocab::DisplayEmote,
             EventPrinter::Utilities::event_name(params[0], event.map))},
           {color: :events, text: EventPrinter::Vocab::Emotes[params[1]-1]}
         ]},
@@ -727,29 +727,29 @@ if $TEST
           {color: :wait, text: sprintf(EventPrinter::Vocab::Wait, params[0])}
         ]},
         231 => ->(params, event){ [true,
-          {color: :pictures, text: sprintf(EventPrinter::Vocab::DisplayPicture, params[0], params[1], 
-            EventPrinter::Vocab::PositionPicture[0][params[2]], sprintf(EventPrinter::Vocab::PositionPicture[1][params[3]], 
+          {color: :pictures, text: sprintf(EventPrinter::Vocab::DisplayPicture, params[0], params[1],
+            EventPrinter::Vocab::PositionPicture[0][params[2]], sprintf(EventPrinter::Vocab::PositionPicture[1][params[3]],
             params[4], params[5]), params[6], params[7], params[8], EventPrinter::Vocab::Transparency[params[9]])}
         ]},
         232 => ->(params, event){ [true,
-          {color: :pictures, text: sprintf(EventPrinter::Vocab::MovePicture, params[0], params[1], 
-            EventPrinter::Vocab::PositionPicture[0][params[2]], sprintf(EventPrinter::Vocab::PositionPicture[1][params[3]], 
+          {color: :pictures, text: sprintf(EventPrinter::Vocab::MovePicture, params[0], params[1],
+            EventPrinter::Vocab::PositionPicture[0][params[2]], sprintf(EventPrinter::Vocab::PositionPicture[1][params[3]],
             params[4], params[5]), params[6], params[7], params[8], EventPrinter::Vocab::Transparency[params[9]],
             params[10], params[11] ? EventPrinter::Vocab::WaitEnd : "")}
         ]},
         233 => ->(params, event){ [true,
-          {color: :pictures, text: sprintf(EventPrinter::Vocab::RotatePicture, params[0], params[1] > 0 ? "+" : "", 
+          {color: :pictures, text: sprintf(EventPrinter::Vocab::RotatePicture, params[0], params[1] > 0 ? "+" : "",
             params[1])}
         ]},
         234 => ->(params, event){ [true,
-          {color: :pictures, text: sprintf(EventPrinter::Vocab::TonePicture, params[0], params[1].to_string_params, 
+          {color: :pictures, text: sprintf(EventPrinter::Vocab::TonePicture, params[0], params[1].to_string_params,
             params[2], params[3] ? EventPrinter::Vocab::WaitEnd : "")}
         ]},
         235 => ->(params, event){ [true,
           {color: :pictures, text: sprintf(EventPrinter::Vocab::DeletePicture, params[0])}
         ]},
         236 => ->(params, event){ [true,
-          {color: :pictures, text: sprintf(EventPrinter::Vocab::WeatherEffect, 
+          {color: :pictures, text: sprintf(EventPrinter::Vocab::WeatherEffect,
             sprintf(EventPrinter::Vocab::Weather[params[0]], params[1]), params[2],
             params[3] ? EventPrinter::Vocab::WaitEnd : "")}
         ]},
@@ -806,7 +806,7 @@ if $TEST
           {color: :graphics, text: sprintf(EventPrinter::Vocab::GetInformationCoord[params[2]], *params[3..4])}
         ]},
         301 => ->(params, event){ [true,
-          {color: :game, text: sprintf(EventPrinter::Vocab::Battle, params[0] == 0 ? 
+          {color: :game, text: sprintf(EventPrinter::Vocab::Battle, params[0] == 0 ?
           EventPrinter::Utilities::enemy_name(params[1]) : sprintf(EventPrinter::Vocab::BattleIndexed, params[1]))}
           ] },
         302 => ->(params, event){ [true,
@@ -814,65 +814,65 @@ if $TEST
           {color: :game, text: EventPrinter::Utilities::base_item_name(*params[0..1])}
           ] },
         303 => ->(params, event){ [true,
-          {color: :game, text: sprintf(EventPrinter::Vocab::EnterName, 
+          {color: :game, text: sprintf(EventPrinter::Vocab::EnterName,
               EventPrinter::Utilities::hero_name(params[0])[1...-1], params[1])}
           ] },
         311 => ->(params, event){ [true,
           {color: :manage, text: EventPrinter::Vocab::ModifyHP},
-          {color: :manage, text: params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) : 
+          {color: :manage, text: params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) :
             [EventPrinter::Vocab::Variable, EventPrinter::Utilities::variable_name(params[1])].join(" ")},
           {color: :manage, text: EventPrinter::Vocab::PlusOrMinus[params[2]]},
           {color: :manage, text: params[3] == 0 ? params[4].to_s : EventPrinter::Utilities::la_variable(params[4])}
           ] },
         312 => ->(params, event){ [true,
           {color: :manage, text: EventPrinter::Vocab::ModifyMP},
-          {color: :manage, text: params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) : 
+          {color: :manage, text: params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) :
             [EventPrinter::Vocab::Variable, EventPrinter::Utilities::variable_name(params[1])].join(" ")},
           {color: :manage, text: EventPrinter::Vocab::PlusOrMinus[params[2]]},
           {color: :manage, text: params[3] == 0 ? params[4].to_s : EventPrinter::Utilities::la_variable(params[4])}
           ] },
         313 => ->(params, event){ [true,
-          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyStatus, 
+          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyStatus,
             EventPrinter::Utilities::hero_name(params[0]))},
           {color: :manage, text: EventPrinter::Vocab::PlusOrMinus[params[1]]},
           {color: :manage, text: sprintf(EventPrinter::Vocab::Name, EventPrinter::Utilities::state_name(params[2]))}
           ] },
         314 => ->(params, event){ [true,
           {color: :manage, text: EventPrinter::Vocab::Recover},
-          {color: :manage, text: params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) : 
+          {color: :manage, text: params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) :
             [EventPrinter::Vocab::Variable, EventPrinter::Utilities::variable_name(params[1])].join(" ")}
           ] },
         315 => ->(params, event){ [true,
-          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyExperience, 
-            params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) : 
+          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyExperience,
+            params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) :
             [EventPrinter::Vocab::Variable, EventPrinter::Utilities::variable_name(params[1])].join(" "))},
           {color: :manage, text: EventPrinter::Vocab::PlusOrMinus[params[2]]},
           {color: :manage, text: params[3] == 0 ? params[4].to_s : EventPrinter::Utilities::la_variable(params[4])}
           ] },
         316 => ->(params, event){ [true,
-          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyLevel, 
-            params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) : 
+          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyLevel,
+            params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) :
             [EventPrinter::Vocab::Variable, EventPrinter::Utilities::variable_name(params[1])].join(" "))},
           {color: :manage, text: EventPrinter::Vocab::PlusOrMinus[params[2]]},
           {color: :manage, text: params[3] == 0 ? params[4].to_s : EventPrinter::Utilities::la_variable(params[4])}
           ] },
         317 => ->(params, event){ [true,
-          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyParameters, 
-            params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) : 
+          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyParameters,
+            params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) :
             [EventPrinter::Vocab::Variable, EventPrinter::Utilities::variable_name(params[1])].join(" "))},
           {color: :manage, text: EventPrinter::Vocab::Attributes[params[2] - 5]},
           {color: :manage, text: EventPrinter::Vocab::PlusOrMinus[params[3]]},
           {color: :manage, text: params[4] == 0 ? params[5].to_s : EventPrinter::Utilities::la_variable(params[5])}
           ] },
         318 => ->(params, event){ [true,
-          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifySkill, 
-            params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) : 
+          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifySkill,
+            params[0] == 0 ? EventPrinter::Utilities::hero_name(params[1]) :
             [EventPrinter::Vocab::Variable, EventPrinter::Utilities::variable_name(params[1])].join(" "))},
           {color: :manage, text: EventPrinter::Vocab::PlusOrMinus[params[2]]},
           {color: :manage, text: EventPrinter::Utilities::skill_name(params[3])}
           ] },
         319 => ->(params, event){ [true,
-          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyEquipement, 
+          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyEquipement,
             EventPrinter::Utilities::hero_name(params[0]))},
           {color: :manage, text: EventPrinter::Vocab::Equipement[params[1]]},
           {color: :manage, text: EventPrinter::Vocab::Operators[0]},
@@ -884,16 +884,16 @@ if $TEST
           {color: :manage, text: "'#{params[1]}'"}
           ] },
         321 => ->(params, event){ [true,
-          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyHeroClass, 
+          {color: :manage, text: sprintf(EventPrinter::Vocab::ModifyHeroClass,
             EventPrinter::Utilities::hero_name(params[0]))},
           {color: :manage, text: EventPrinter::Utilities::class_name(params[1])}
           ] },
         322 => ->(params, event){ [true,
-          {color: :system, text: sprintf(EventPrinter::Vocab::ModifyHeroAppearance, 
+          {color: :system, text: sprintf(EventPrinter::Vocab::ModifyHeroAppearance,
             EventPrinter::Utilities::hero_name(params[0]), *params[1..-1])}
           ] },
         323 => ->(params, event){ [true,
-          {color: :system, text: sprintf(EventPrinter::Vocab::ModifyVehicleAppearance, 
+          {color: :system, text: sprintf(EventPrinter::Vocab::ModifyVehicleAppearance,
             EventPrinter::Vocab::Vehicle[params[0]], *params[1..-1])},
           ] },
         324 => ->(params, event){ [true,
@@ -902,44 +902,44 @@ if $TEST
           {color: :manage, text: "'#{params[1]}'"}
           ] },
         331 => ->(params, event){ [true,
-          {color: :battle, text: sprintf(EventPrinter::Vocab::ModifyHPEnemy, 
+          {color: :battle, text: sprintf(EventPrinter::Vocab::ModifyHPEnemy,
             EventPrinter::Utilities::foe_name(params[0], event))},
           {color: :battle, text: EventPrinter::Vocab::PlusOrMinus[params[1]]},
           {color: :battle, text: params[2] == 0 ? params[3].to_s : EventPrinter::Utilities::la_variable(params[3])}
           ] },
         332 => ->(params, event){ [true,
-          {color: :battle, text: sprintf(EventPrinter::Vocab::ModifyMPEnemy, 
+          {color: :battle, text: sprintf(EventPrinter::Vocab::ModifyMPEnemy,
             EventPrinter::Utilities::foe_name(params[0], event))},
           {color: :battle, text: EventPrinter::Vocab::PlusOrMinus[params[1]]},
           {color: :battle, text: params[2] == 0 ? params[3].to_s : EventPrinter::Utilities::la_variable(params[3])}
           ] },
         333 => ->(params, event){ [true,
-          {color: :battle, text: sprintf(EventPrinter::Vocab::ModifyStatusEnemy, 
+          {color: :battle, text: sprintf(EventPrinter::Vocab::ModifyStatusEnemy,
             EventPrinter::Utilities::foe_name(params[0], event))},
           {color: :battle, text: EventPrinter::Vocab::PlusOrMinus[params[1]]},
           {color: :battle, text: EventPrinter::Utilities::state_name(params[2])}
           ] },
         334 => ->(params, event){ [true,
-          {color: :battle, text: sprintf(EventPrinter::Vocab::RecoverEnemy, 
+          {color: :battle, text: sprintf(EventPrinter::Vocab::RecoverEnemy,
             EventPrinter::Utilities::foe_name(params[0], event))}
           ] },
         335 => ->(params, event){ [true,
-          {color: :battle, text: sprintf(EventPrinter::Vocab::RevealEnemy, 
+          {color: :battle, text: sprintf(EventPrinter::Vocab::RevealEnemy,
             EventPrinter::Utilities::foe_name(params[0], event))}
           ] },
         336 => ->(params, event){ [true,
-          {color: :battle, text: sprintf(EventPrinter::Vocab::MorphEnemy, 
+          {color: :battle, text: sprintf(EventPrinter::Vocab::MorphEnemy,
             EventPrinter::Utilities::foe_name(params[0], event), EventPrinter::Utilities::enemy_name(params[1]))}
           ] },
         337 => ->(params, event){ [true,
-          {color: :battle, text: sprintf(EventPrinter::Vocab::DisplayBattleAnimation, 
+          {color: :battle, text: sprintf(EventPrinter::Vocab::DisplayBattleAnimation,
             EventPrinter::Utilities::foe_name(params[0], event))},
           {color: :battle, text: EventPrinter::Utilities::animation_name(params[1])}
           ] },
         339 => ->(params, event){ [true,
-          {color: :battle, text: sprintf(EventPrinter::Vocab::ForceAction, params[0] == 0 ? 
+          {color: :battle, text: sprintf(EventPrinter::Vocab::ForceAction, params[0] == 0 ?
             EventPrinter::Utilities::foe_name(params[1], event) :  sprintf(EventPrinter::Vocab::Battler, params[1] + 1),
-            EventPrinter::Utilities::skill_name(params[2]), EventPrinter::Utilities::target_name(params[3]))}        
+            EventPrinter::Utilities::skill_name(params[2]), EventPrinter::Utilities::target_name(params[3]))}
         ]},
         340 => ->(params, event){ [true,
           {color: :battle, text: EventPrinter::Vocab::EndTheBattle}]},
@@ -956,7 +956,7 @@ if $TEST
           {color: :script, text: params[0]}
           ] },
         401 => ->(params, event){ [false,
-          {color: :nothing, text: EventPrinter::Vocab::Message[0...-2]}, # Without the ":" and space 
+          {color: :nothing, text: EventPrinter::Vocab::Message[0...-2]}, # Without the ":" and space
           {color: :standard, text: ":"},
           {color: :text, text: params[0]}] },
         402 => ->(params, event){ [false,
@@ -983,7 +983,7 @@ if $TEST
           {color: :nothing, text: EventPrinter::Vocab::MoveEvent[0...-2]},
           {color: :events, text: ":"},
           {color: :events, text: EventPrinter::Vocab::Command[2]},
-          {color: :events, text: sprintf(EventPrinter::Vocab::MoveRouteCommands[params[0].code], 
+          {color: :events, text: sprintf(EventPrinter::Vocab::MoveRouteCommands[params[0].code],
               *params[0].to_params)}
           ]},
         601 => ->(params, event){ [false,
@@ -1010,9 +1010,9 @@ if $TEST
       #--------------------------------------------------------------------------
       OperandArray = [
         ->(params, event){params[0].to_s},
-        ->(params, event){ 
+        ->(params, event){
           sprintf(EventPrinter::Vocab::ValueOfVariable, EventPrinter::Utilities::variable_name(params[0]))},
-        ->(params, event){ 
+        ->(params, event){
           sprintf(EventPrinter::Vocab::RandomValue, params[0], params[1]) },
         ->(params, event){[
           ->(params, event){sprintf(EventPrinter::Vocab::NumberOf, EventPrinter::Utilities::item_name(params[0]))},
@@ -1020,9 +1020,9 @@ if $TEST
           ->(params, event){sprintf(EventPrinter::Vocab::NumberOf, EventPrinter::Utilities::armor_name(params[0]))},
           ->(params, event){sprintf("%s : %s", EventPrinter::Utilities::hero_name(params[0]),
             EventPrinter::Vocab::Attributes[params[1]])},
-          ->(params, event){sprintf("%s : %s", EventPrinter::Utilities::foe_name(params[0], event), 
+          ->(params, event){sprintf("%s : %s", EventPrinter::Utilities::foe_name(params[0], event),
             EventPrinter::Vocab::Attributes[params[1]+2]) },
-          ->(params, event){sprintf("%s : %s", EventPrinter::Utilities::event_name(params[0], event.map), 
+          ->(params, event){sprintf("%s : %s", EventPrinter::Utilities::event_name(params[0], event.map),
             EventPrinter::Vocab::EventParam[params[1]]) },
           ->(params, event){sprintf(EventPrinter::Vocab::IdOfAMember, EventPrinter::Vocab::OrdinalNumber[params[0]])},
           ->(params, event){EventPrinter::Vocab::OtherVariable[params[0]] }
@@ -1034,12 +1034,12 @@ if $TEST
       #--------------------------------------------------------------------------
       ConditionArray = [
         ->(params, event){
-          [EventPrinter::Vocab::Switch, EventPrinter::Utilities::switch_name(params[0]), 
-              EventPrinter::Vocab::ComparationOperator[0], 
+          [EventPrinter::Vocab::Switch, EventPrinter::Utilities::switch_name(params[0]),
+              EventPrinter::Vocab::ComparationOperator[0],
               EventPrinter::Vocab::OnOff[params[1]]].join(" ")
         },
         ->(params, event){
-          [EventPrinter::Vocab::Variable, EventPrinter::Utilities::variable_name(params[0]), 
+          [EventPrinter::Vocab::Variable, EventPrinter::Utilities::variable_name(params[0]),
             EventPrinter::Vocab::ComparationOperator[params[3]],
             params[1] == 0 ? params[2].to_s : sprintf("%s %s", EventPrinter::Vocab::Variable,
               EventPrinter::Utilities::variable_name(params[2]))
@@ -1051,13 +1051,13 @@ if $TEST
             EventPrinter::Vocab::OnOff[params[1]]].join(" ")
         },
         ->(params, event){
-          [EventPrinter::Vocab::LeChronometer, 
+          [EventPrinter::Vocab::LeChronometer,
             sprintf(EventPrinter::Vocab::Start, params[0] / 60, params[0] % 60) ,
             EventPrinter::Vocab::MoreOrLess[params[1]] ].join(" ")
         },
         ->(params, event){
           [EventPrinter::Utilities::hero_name(params[0]),
-            sprintf(EventPrinter::Vocab::HeroConditions[params[1]], HeroConditionString[params[1]].call(params[2]))       
+            sprintf(EventPrinter::Vocab::HeroConditions[params[1]], HeroConditionString[params[1]].call(params[2]))
           ].join(" ")
         },
         ->(params, event){ [EventPrinter::Utilities::foe_name(params[0], event),
@@ -1076,11 +1076,11 @@ if $TEST
           sprintf(EventPrinter::Vocab::ItemCondition, EventPrinter::Utilities::item_name(params[0]))
         },
         ->(params, event){
-          sprintf(EventPrinter::Vocab::WeaponCondition, EventPrinter::Utilities::weapon_name(params[0]), 
+          sprintf(EventPrinter::Vocab::WeaponCondition, EventPrinter::Utilities::weapon_name(params[0]),
             params[1] ? EventPrinter::Vocab::OrEquipped : "")
         },
         ->(params, event){
-          sprintf(EventPrinter::Vocab::ArmorCondition, EventPrinter::Utilities::armor_name(params[0]), 
+          sprintf(EventPrinter::Vocab::ArmorCondition, EventPrinter::Utilities::armor_name(params[0]),
             params[1] ? EventPrinter::Vocab::OrEquipped : "")
         },
         ->(params, event){
@@ -1108,7 +1108,7 @@ if $TEST
       # * Converts params for warp
       #--------------------------------------------------------------------------
       WarpText = [
-        ->(params){ sprintf("[%03d:%s], (X:%03d, Y:%03d)", params[0], 
+        ->(params){ sprintf("[%03d:%s], (X:%03d, Y:%03d)", params[0],
           EventPrinter::Utilities::map_name(params[0]), params[1], params[2]) },
         ->(params){ sprintf("ID:[%04d], X:[%04d], Y:[%04d]", *params) }
       ]
@@ -1118,7 +1118,7 @@ if $TEST
       PositionArray = [
         ->(params, event){ sprintf(EventPrinter::Vocab::Position[0], *params)},
         ->(params, event){ sprintf(EventPrinter::Vocab::Position[1], *params)},
-        ->(params, event){ sprintf(EventPrinter::Vocab::Position[2], 
+        ->(params, event){ sprintf(EventPrinter::Vocab::Position[2],
           EventPrinter::Utilities::event_name(params[0], event.map))}
       ]
       #--------------------------------------------------------------------------
@@ -1155,8 +1155,8 @@ if $TEST
       # * From representation to bbcode
       #--------------------------------------------------------------------------
       def bbcode
-        start = sprintf("%s%s%s", 
-          EventPrinter::BBcode::colorize(:nothing, EventPrinter::Vocab::Command) * @parse_results[:indent], 
+        start = sprintf("%s%s%s",
+          EventPrinter::BBcode::colorize(:nothing, EventPrinter::Vocab::Command) * @parse_results[:indent],
           EventPrinter::BBcode::colorize(:standard, EventPrinter::Vocab::Command[0..1]),
           EventPrinter::BBcode::colorize(
               @parse_results[:command].first ? :standard : :nothing, EventPrinter::Vocab::Command[2..2] << " "))
@@ -1169,8 +1169,8 @@ if $TEST
       # * From representation to html
       #--------------------------------------------------------------------------
       def html
-        start = sprintf("%s%s%s", 
-          EventPrinter::HTML::colorize(:nothing, EventPrinter::Vocab::Command) * @parse_results[:indent], 
+        start = sprintf("%s%s%s",
+          EventPrinter::HTML::colorize(:nothing, EventPrinter::Vocab::Command) * @parse_results[:indent],
           EventPrinter::HTML::colorize(:standard, EventPrinter::Vocab::Command[0..1]),
           EventPrinter::HTML::colorize(
               @parse_results[:command].first ? :standard : :nothing, EventPrinter::Vocab::Command[2..2] << " "))
@@ -1183,7 +1183,7 @@ if $TEST
       # * Minimize representation (merge same color texts)
       #--------------------------------------------------------------------------
       def minimize
-        return unless @parse_results[:command][2] 
+        return unless @parse_results[:command][2]
         tab = [{color: @parse_results[:command][1][:color], text: ""}]
         @parse_results[:command][1..-1].each do |part|
           tab << {color: part[:color], text: ""} if tab.last[:color] != part[:color]
@@ -1196,7 +1196,7 @@ if $TEST
     #==============================================================================
     # ** EventPage
     #------------------------------------------------------------------------------
-    #  Handle access to an event's page. 
+    #  Handle access to an event's page.
     #==============================================================================
     class Page
       #--------------------------------------------------------------------------
@@ -1278,7 +1278,7 @@ if $TEST
         str << (@list.map { |e| e.html }).join
         str << EventPrinter::HTML::foot
         Win32API.push_text_in_clipboard(str.to_ascii << "\0")
-      end 
+      end
       #--------------------------------------------------------------------------
       # * Make an okay filename
       #--------------------------------------------------------------------------
@@ -1430,7 +1430,7 @@ if $TEST
     #==============================================================================
     # ** BBcode helper methods
     #==============================================================================
-    module BBcode    
+    module BBcode
       #---------------------------------------------------------------------------------------------
       # * Public module methods
       #---------------------------------------------------------------------------------------------
@@ -1439,7 +1439,7 @@ if $TEST
       # ** Head
       #--------------------------------------------------------------------------
       def head(string_name = "foo")
-        sprintf("[table style='background-color:%s;border:1px solid; padding: 5px;text-shadow:none' class='event_code']%s", 
+        sprintf("[table style='background-color:%s;border:1px solid; padding: 5px;text-shadow:none' class='event_code']%s",
           EventPrinter::Theme::Nothing, name(string_name))
       end
       #--------------------------------------------------------------------------
@@ -1459,7 +1459,7 @@ if $TEST
       #--------------------------------------------------------------------------
       def line(string)
         sprintf("[tr][td]%s[/td][/tr]", string)
-      end        
+      end
       #--------------------------------------------------------------------------
       # ** Footer
       #--------------------------------------------------------------------------
@@ -1470,7 +1470,7 @@ if $TEST
     #==============================================================================
     # ** HTML helper methods
     #==============================================================================
-    module HTML    
+    module HTML
       #---------------------------------------------------------------------------------------------
       # * Public module methods
       #---------------------------------------------------------------------------------------------
@@ -1493,13 +1493,13 @@ if $TEST
       #--------------------------------------------------------------------------
       def colorize(color, string)
         sprintf("<span style='color:%s'>%s</span>", EventPrinter::Theme::get_color(color), string)
-      end  
+      end
       #--------------------------------------------------------------------------
       # ** Line
       #--------------------------------------------------------------------------
       def line(string)
         sprintf("<p style='margin: 0'>%s</p>", string)
-      end      
+      end
       #--------------------------------------------------------------------------
       # ** Footer
       #--------------------------------------------------------------------------
@@ -1519,6 +1519,7 @@ if $TEST
       #                  :map (returns to Scene_Map)
       #--------------------------------------------------------------------------
       def start
+        DataManager.load_database
         super
         initialize_data
         @title_window = Window_Help.new(1)
@@ -1543,7 +1544,7 @@ if $TEST
       # ** Create mode window
       # ** Create mode window
       #--------------------------------------------------------------------------
-      def create_mode_window 
+      def create_mode_window
         @mode_window = EventPrinter::Windows::Modes.new @title_window
         lam = ->(action){do_action(action)}
         EventPrinter::Vocab::Windows::Modes.each do |symbol, _|
@@ -1561,7 +1562,7 @@ if $TEST
       def update
         super
         if @map_window.active
-          update_map_window 
+          update_map_window
         elsif @event_window.active
           update_event_window
         elsif @page_window.active
@@ -1624,7 +1625,7 @@ if $TEST
           map = get_map(@map_window.current_map_id)
           @event_window.fill_with map.events.map { |e| {id: e[1].id, name: e[1].name }}
         when :common
-          @event_window.fill_with(@data[:common_event][1..-1].map do |e| 
+          @event_window.fill_with(@data[:common_event][1..-1].map do |e|
             {id: e.id, name: e.name }
           end)
         when :battle
@@ -1688,7 +1689,7 @@ if $TEST
         def initialize(help_window)
           @help_window = help_window
           fill
-          super(0, line_height + (standard_padding*2), Graphics.width, 
+          super(0, line_height + (standard_padding*2), Graphics.width,
             Graphics.height - (line_height + (standard_padding*2)))
           activate.refresh
           select(0)
@@ -1773,7 +1774,7 @@ if $TEST
         def initialize(help_window)
           @help_window = help_window
           @data = []
-          super(0, line_height + (standard_padding*2), Graphics.width, 
+          super(0, line_height + (standard_padding*2), Graphics.width,
             Graphics.height - (line_height + (standard_padding*2)))
           hide.deactivate
         end
@@ -1809,7 +1810,7 @@ if $TEST
           elt = @data[index]
           change_color(normal_color)
           draw_text(item_rect_for_text(index), sprintf(EventPrinter::Vocab::Windows::EventName, elt[:id], elt[:name] ))
-        end   
+        end
         #--------------------------------------------------------------------------
         # * Update help Window
         #--------------------------------------------------------------------------
@@ -1825,7 +1826,7 @@ if $TEST
         def initialize(help_window)
           @help_window = help_window
           @item_max = 0
-          super(0, line_height + (standard_padding*2), Graphics.width, 
+          super(0, line_height + (standard_padding*2), Graphics.width,
             Graphics.height - (line_height + (standard_padding*2)))
           hide.deactivate
         end
@@ -1853,7 +1854,7 @@ if $TEST
         def draw_item(index)
           change_color(normal_color)
           draw_text(item_rect_for_text(index), sprintf(EventPrinter::Vocab::Windows::PageName, index+1))
-        end 
+        end
         #--------------------------------------------------------------------------
         # * Update help Window
         #--------------------------------------------------------------------------
@@ -1936,7 +1937,7 @@ if $TEST
   #==============================================================================
   # ** RPG::MoveCommand
   #==============================================================================
-  class RPG::MoveCommand 
+  class RPG::MoveCommand
     #--------------------------------------------------------------------------
     # * Hash for special moving commands
     #--------------------------------------------------------------------------
@@ -2032,7 +2033,7 @@ if $TEST
   #==============================================================================
   # ** String
   #------------------------------------------------------------------------------
-  #  A String object holds and manipulates an arbitrary sequence of bytes, 
+  #  A String object holds and manipulates an arbitrary sequence of bytes,
   #  typically representing characters.
   #==============================================================================
   class String
@@ -2057,7 +2058,6 @@ if $TEST
     alias old_update update
     def update
       old_update
-      DataManager.load_database
       if Input.trigger?(Input::F5)
         SceneManager.call(EventPrinter::Scene)
       end
