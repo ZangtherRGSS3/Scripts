@@ -2,6 +2,8 @@
 #==============================================================================
 #  Event Printer - RPG Maker VXace
 #------------------------------------------------------------------------------
+#  Version 1.3.2 - 21/05/2015
+#      - Fix little lag on the title screen
 #  Version 1.3.1 - 06/05/2015
 #      - Add class 'event_code' to HTML and BBcode outputs
 #  Version 1.3 - 04/11/2013
