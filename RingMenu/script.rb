@@ -57,6 +57,18 @@ module Zangther
     module Settings
       class << self
         #--------------------------------------------------------------------------
+        # * Is scene choice enabled ?
+        #--------------------------------------------------------------------------
+        def choice_enabled?(choice_name)
+          get[:choice_enabled][choice_name] or return true
+        end
+        #--------------------------------------------------------------------------
+        # * Set if is scene choice is enabled or not ?
+        #--------------------------------------------------------------------------
+        def set_choice_state(choice_name, state)
+          get[:choice_enabled][choice_name] = state
+        end
+        #--------------------------------------------------------------------------
         # * Get settings
         #--------------------------------------------------------------------------
         def get
@@ -69,7 +81,7 @@ module Zangther
         # * Initialize settings with a hash if needed
         #--------------------------------------------------------------------------
         def initialize_settings
-          $game_variables[Config::SETTINGS_VARIABLE] = {}
+          $game_variables[Config::SETTINGS_VARIABLE] = Hash.new { |hash, key| hash[key] = {} }
         end
       end
     end
@@ -1008,13 +1020,40 @@ module Zangther
     end
   end
 end
+#==============================================================================
+# ** Game_Interpreter
+#------------------------------------------------------------------------------
+#  An interpreter for executing event commands. This class is used within the
+# Game_Map, Game_Troop, and Game_Event classes.
+#==============================================================================
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # * Change Save Access
+  #--------------------------------------------------------------------------
+  alias change_save_availability command_134
+  def command_134
+    Zangther::RingMenu::Settings.set_choice_state(:file, !change_save_availability)
+  end
+  #--------------------------------------------------------------------------
+  # * Disable access to a specific choice into the menu
+  #--------------------------------------------------------------------------
+  def disable_menu_choice(menu_choice)
+    Zangther::RingMenu::Settings.set_choice_state(menu_choice, false)
+  end
+  #--------------------------------------------------------------------------
+  # * Enable access to a specific choice into the menu
+  #--------------------------------------------------------------------------
+  def enable_menu_choice(menu_choice)
+    Zangther::RingMenu::Settings.set_choice_state(menu_choice, true)
+  end
+end
 
 #==============================================================================
 # ** Scene_Map
 #------------------------------------------------------------------------------
 #  This class performs the map screen processing.
 #==============================================================================
-class Scene_Map < Scene_Base
+class Scene_Map
   #--------------------------------------------------------------------------
   # * Call Menu Screen
   #--------------------------------------------------------------------------
