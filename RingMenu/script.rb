@@ -309,13 +309,12 @@ module Zangther
       @state = :closed
       self.step = :default
       fade_in(distance)
-      update(true)
     end
     #--------------------------------------------------------------------------
     # * Update
     #  need_refresh : force refresh
     #--------------------------------------------------------------------------
-    def update(need_refresh=false)
+    def update(current_is_gray, need_refresh=false)
       return unless @icons
       if moving?
         if spinning?
@@ -327,7 +326,7 @@ module Zangther
       end
       update_opacity
       update_state
-      refresh if need_refresh
+      refresh(current_is_gray) if need_refresh
     end
     #--------------------------------------------------------------------------
     # * Prepare terminate method
@@ -344,13 +343,13 @@ module Zangther
     #--------------------------------------------------------------------------
     # * Refresh
     #--------------------------------------------------------------------------
-    def refresh
+    def refresh(current_is_gray)
       @icons.size.times do |i|
         icon = @icons[i]
         angle = @angle + ((PI_2/(@icons.size))*i)
         icon.place(@x,@y,@distance,angle)
         icon.opacity = @opacity
-        icon.tone.gray = (i == @index) ? 0 : 255
+        icon.tone.gray = (i == @index) && !current_is_gray ? 0 : 255
         icon.update
       end
     end
@@ -765,10 +764,16 @@ module Zangther
         @command_ring.dispose
         change_scene
       else
-        @command_ring.update
+        @command_ring.update(current_choice_disabled?)
         update_command_name
         update_command_selection unless @command_ring.closing?
       end
+    end
+    #--------------------------------------------------------------------------
+    # * Is current choice disabled ?
+    #--------------------------------------------------------------------------
+    def current_choice_disabled?
+      !RingMenu::Settings.choice_enabled? current_choice[:choice_name]
     end
 
     private
@@ -830,6 +835,7 @@ module Zangther
       command = RingMenu::Config::MENU_COMMAND[@command_ring.index]
       bitmap = @command_name.bitmap
       bitmap.clear
+      bitmap.font.color.alpha = current_choice_disabled? ? 160 : 255
       bitmap.draw_text(rect, command[:name], 1)
     end
     #--------------------------------------------------------------------------
@@ -872,12 +878,6 @@ module Zangther
     def current_choice
       RingMenu::Config::MENU_COMMAND[@command_ring.index]
     end
-    #--------------------------------------------------------------------------
-    # * Is current choice disabled ?
-    #--------------------------------------------------------------------------
-    def current_choice_disabled?
-      !RingMenu::Settings.choice_enabled? current_choice[:choice_name]
-    end
   end
 
   #==============================================================================
@@ -909,6 +909,7 @@ module Zangther
       distance = RingMenu::Config::DISTANCE
       angle = RingMenu::Config::START_ANGLE
       @command_ring = Spriteset_Iconring.new(x, y, distance, 10, angle, icons)
+      @command_ring.update(current_choice_disabled?, true)
     end
     #--------------------------------------------------------------------------
     # * Create Command Text
