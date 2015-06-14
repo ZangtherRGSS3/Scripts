@@ -833,10 +833,13 @@ module Zangther
     def update_command_name
       rect = @command_name.src_rect
       command = RingMenu::Config::MENU_COMMAND[@command_ring.index]
+      return if @current_text == command[:name]
+
+      @current_text = command[:name]
       bitmap = @command_name.bitmap
       bitmap.clear
       bitmap.font.color.alpha = current_choice_disabled? ? 160 : 255
-      bitmap.draw_text(rect, command[:name], 1)
+      bitmap.draw_text(rect, @current_text, 1)
     end
     #--------------------------------------------------------------------------
     # * Dispose Command Text
@@ -919,7 +922,7 @@ module Zangther
       distance = RingMenu::Config::DISTANCE
       width = distance * 2
       @command_name.bitmap = Bitmap.new(width, 24)
-      @command_name.x = $game_player.screen_x  - distance
+      @command_name.x = $game_player.screen_x - distance
       @command_name.y = $game_player.screen_y + distance
     end
     #--------------------------------------------------------------------------
