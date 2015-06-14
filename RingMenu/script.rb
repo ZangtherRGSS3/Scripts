@@ -31,23 +31,21 @@ module Zangther
   module RingMenu
     module Config
       # Menus' commands
-      MENU_COMMAND = [
-         # {name: "Name", icon: ID, action: -> {Scene}, prepare: -> {SceneManager.scene.prepare(arguments)} }
-         {name: "Items", icon: 261, action: -> {Scene_Item}},
-         {name: "Skills", icon: 116, action: -> {Scene_HeroMenu}, prepare: -> {SceneManager.scene.prepare(Scene_Skill)} },
-         {name: "Equip", icon: 434, action: -> {Scene_HeroMenu}, prepare: -> {SceneManager.scene.prepare(Scene_Equip)} },
-         {name: "Status", icon: 121, action: -> {Scene_HeroMenu}, prepare: -> {SceneManager.scene.prepare(Scene_Status)} },
-         {name: "Formation", icon: 11, action: -> {Scene_HeroFormation}},
-         {name: "File", icon: 117, action: -> {Scene_Save}},
-         {name: "Exit", icon: 12, action: -> {Scene_End}}
-      ]
-
+      MENU_COMMAND = {
+        # scene_name: {name: "Name", icon: ID, action: -> {Scene}, prepare: -> {SceneManager.scene.prepare(arguments)} }
+        items: {name: "Items", icon: 261, action: -> {Scene_Item}},
+        skills: {name: "Skills", icon: 116, action: -> {Scene_HeroMenu}, prepare: -> {SceneManager.scene.prepare(Scene_Skill)} },
+        equip: {name: "Equip", icon: 434, action: -> {Scene_HeroMenu}, prepare: -> {SceneManager.scene.prepare(Scene_Equip)} },
+        status: {name: "Status", icon: 121, action: -> {Scene_HeroMenu}, prepare: -> {SceneManager.scene.prepare(Scene_Status)} },
+        formation: {name: "Formation", icon: 11, action: -> {Scene_HeroFormation}},
+        file: {name: "File", icon: 117, action: -> {Scene_Save}},
+        exit: {name: "Exit", icon: 12, action: -> {Scene_End}}
+      }
       # Angle de base
       START_ANGLE = 1.5 * Math::PI
       # Distance
       DISTANCE = 50
     end
-
     #==============================================================================
     # ** Fade
     #------------------------------------------------------------------------------
@@ -739,7 +737,7 @@ module Zangther
     #--------------------------------------------------------------------------
     def create_command_ring
       icons = Array.new
-      RingMenu::Config::MENU_COMMAND.each do |command|
+      RingMenu::Config::MENU_COMMAND.each_value do |command|
         icons.push(icon = Sprite_Icon.new)
         icon.bitmap = Cache.system("Iconset")
         index = command[:icon]
@@ -785,7 +783,7 @@ module Zangther
     #--------------------------------------------------------------------------
     def update_command_name
       rect = @command_name.src_rect
-      command = RingMenu::Config::MENU_COMMAND[@command_ring.index]
+      command = RingMenu::Config::MENU_COMMAND.values[@command_ring.index]
       bitmap = @command_name.bitmap
       bitmap.clear
       bitmap.draw_text(rect, command[:name], 1)
@@ -801,7 +799,7 @@ module Zangther
     #--------------------------------------------------------------------------
     def prepare_next_scene
       @index = @command_ring.index
-      command = RingMenu::Config::MENU_COMMAND[@command_ring.index]
+      command = RingMenu::Config::MENU_COMMAND.values[@command_ring.index]
       @scene = command[:action].call
       @prepare = command.fetch(:prepare) { |el| -> {} }
       @command_ring.pre_terminate
