@@ -18,6 +18,8 @@
 #     If any questions, contact me at zangther@gmail.com
 #------------------------------------------------------------------------------
 # Changelog :
+#     v1.3.1 : Fix text drawing, draw only when needed
+#     v1.3.0 : Add enable/disable menu choices
 #     v1.2.0 : Inclusion into RMEBuilder
 #     v1.1.2 : Make non selected icon grayish
 #     v1.1.0 : Add Scene_HeroFormation
@@ -26,6 +28,18 @@
 #------------------------------------------------------------------------------
 #       Special thanks to Raho, Nuki, S4suk3 and Grim from Funkywork
 #         for advises and constant support ! [ http://funkywork.jeun.fr ]
+#------------------------------------------------------------------------------
+#  Enable/Disable choices -
+#         You can enable or disable menus choices by using the following 
+#            commands into the Call Script event command :
+#                 - disable_menu_choice(choice_name)
+#                 - enable_menu_choice(choice_name)
+#         Example :
+#             Disable items menu : disable_menu_choice(:items)
+#             Enable items menu  : enable_menu_choice(:items)
+#         Note : 
+#             You can still use the events commands for Save/Formation menus
+#
 #==============================================================================
 module Zangther
   module RingMenu
