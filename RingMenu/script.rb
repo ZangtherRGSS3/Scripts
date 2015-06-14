@@ -60,7 +60,8 @@ module Zangther
         # * Is scene choice enabled ?
         #--------------------------------------------------------------------------
         def choice_enabled?(choice_name)
-          get[:choice_enabled][choice_name] or return true
+          state = get[:choice_enabled][choice_name]
+          state.nil? ? true : state
         end
         #--------------------------------------------------------------------------
         # * Set if is scene choice is enabled or not ?
@@ -73,7 +74,7 @@ module Zangther
         #--------------------------------------------------------------------------
         def get
           settings = $game_variables[Config::SETTINGS_VARIABLE]
-          initialize_settings and return get unless settings.is_a? Hash
+          (initialize_settings and return get) unless settings.is_a? Hash
 
           settings
         end
@@ -813,8 +814,12 @@ module Zangther
       elsif Input.trigger?(Input::RIGHT)
         @command_ring.spin_right
       elsif Input.trigger?(Input::C)
-        Sound.play_ok
-        prepare_next_scene
+        if current_choice_disabled?
+          Sound.play_buzzer
+        else
+          Sound.play_ok
+          prepare_next_scene
+        end
       end
     end
     #--------------------------------------------------------------------------
@@ -838,7 +843,7 @@ module Zangther
     #--------------------------------------------------------------------------
     def prepare_next_scene
       @index = @command_ring.index
-      command = RingMenu::Config::MENU_COMMAND[@command_ring.index]
+      command = current_choice
       @scene = command[:action].call
       @prepare = command.fetch(:prepare) { |el| -> {} }
       @command_ring.pre_terminate
@@ -860,6 +865,18 @@ module Zangther
     def do_return
       @scene = :none
       @command_ring.pre_terminate
+    end
+    #--------------------------------------------------------------------------
+    # * Current choice
+    #--------------------------------------------------------------------------
+    def current_choice
+      RingMenu::Config::MENU_COMMAND[@command_ring.index]
+    end
+    #--------------------------------------------------------------------------
+    # * Is current choice disabled ?
+    #--------------------------------------------------------------------------
+    def current_choice_disabled?
+      !RingMenu::Settings.choice_enabled? current_choice[:choice_name]
     end
   end
 
@@ -1033,6 +1050,13 @@ class Game_Interpreter
   alias change_save_availability command_134
   def command_134
     Zangther::RingMenu::Settings.set_choice_state(:file, !change_save_availability)
+  end
+  #--------------------------------------------------------------------------
+  # * Change Formation Access
+  #--------------------------------------------------------------------------
+  alias change_form_availability command_137
+  def command_137
+    Zangther::RingMenu::Settings.set_choice_state(:formation, !change_form_availability)
   end
   #--------------------------------------------------------------------------
   # * Disable access to a specific choice into the menu
