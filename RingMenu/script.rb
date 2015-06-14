@@ -45,6 +45,32 @@ module Zangther
       START_ANGLE = 1.5 * Math::PI
       # Distance
       DISTANCE = 50
+      # Setting save variable (chose a variable not used by any event or script)
+      SETTINGS_VARIABLE = 5001 # It can be outside the RPG Maker bounds.
+    end
+    #==============================================================================
+    # ** Settings
+    #------------------------------------------------------------------------------
+    #  Contains methods about getting and saving settings
+    #==============================================================================
+    module Settings
+      class << self
+        #--------------------------------------------------------------------------
+        # * Get settings
+        #--------------------------------------------------------------------------
+        def get
+          settings = $game_variables[Config::SETTINGS_VARIABLE]
+          initialize_settings and return get unless settings.is_a? Hash
+
+          settings
+        end
+        #--------------------------------------------------------------------------
+        # * Initialize settings with a hash if needed
+        #--------------------------------------------------------------------------
+        def initialize_settings
+          $game_variables[Config::SETTINGS_VARIABLE] = {}
+        end
+      end
     end
     #==============================================================================
     # ** Fade
