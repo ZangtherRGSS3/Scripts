@@ -14,7 +14,7 @@
 #              with this ring menu.
 #             (#call_menu for Scene_Map and #return_scene for the others)
 #------------------------------------------------------------------------------
-# Version : 1.2.0 by Zangther
+# Version : 1.3.1 by Zangther
 #     If any questions, contact me at zangther@gmail.com
 #------------------------------------------------------------------------------
 # Changelog :
