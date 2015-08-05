@@ -14,10 +14,11 @@
 #              with this ring menu.
 #             (#call_menu for Scene_Map and #return_scene for the others)
 #------------------------------------------------------------------------------
-# Version : 1.3.1 by Zangther
+# Version : 1.4.0 by Zangther
 #     If any questions, contact me at zangther@gmail.com
 #------------------------------------------------------------------------------
 # Changelog :
+#     v1.4.0 : Add speed configuration for menus
 #     v1.3.1 : Fix text drawing, draw only when needed
 #     v1.3.0 : Add enable/disable menu choices
 #     v1.2.0 : Inclusion into RMEBuilder
@@ -62,6 +63,10 @@ module Zangther
       DISTANCE = 50
       # Setting save variable (chose a variable not used by any event or script)
       SETTINGS_VARIABLE = 5001 # It can be outside the RPG Maker bounds.
+      # Ring menu spin speed
+      RING_MENU_SPEED = 10
+      # Hero menu spin speed
+      HERO_MENU_SPEED = 10
     end
     #==============================================================================
     # ** Settings
@@ -808,7 +813,8 @@ module Zangther
       y = $game_player.screen_y - 44
       distance = RingMenu::Config::DISTANCE
       angle = RingMenu::Config::START_ANGLE
-      @command_ring = Spriteset_Iconring.new(x, y, distance, 10, angle, icons, @index)
+      speed = RingMenu::Config::RING_MENU_SPEED
+      @command_ring = Spriteset_Iconring.new(x, y, distance, speed, angle, icons, @index)
     end
     #--------------------------------------------------------------------------
     # * Create Command Text
@@ -925,7 +931,8 @@ module Zangther
       y = $game_player.screen_y - 16
       distance = RingMenu::Config::DISTANCE
       angle = RingMenu::Config::START_ANGLE
-      @command_ring = Spriteset_Iconring.new(x, y, distance, 10, angle, icons)
+      speed = RingMenu::Config::HERO_MENU_SPEED
+      @command_ring = Spriteset_Iconring.new(x, y, distance, speed, angle, icons)
       @command_ring.update(current_choice_disabled?, true)
     end
     #--------------------------------------------------------------------------
@@ -1105,3 +1112,4 @@ class Scene_Map
     Window_MenuCommand::init_command_position
   end
 end
+
