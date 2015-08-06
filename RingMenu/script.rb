@@ -1112,6 +1112,5 @@ class Scene_Map
   def call_menu
     Sound.play_ok
     SceneManager.call(Zangther::Scene_RingMenu)
-    Window_MenuCommand::init_command_position
   end
 end
