@@ -18,6 +18,8 @@
 #     If any questions, contact me at zangther@gmail.com
 #------------------------------------------------------------------------------
 # Changelog :
+#     v1.4.1 : Fix icons that were visible before being placed at the
+#                correct location
 #     v1.4.0 : Add speed configuration for menus
 #     v1.3.1 : Fix text drawing, draw only when needed
 #     v1.3.0 : Add enable/disable menu choices
@@ -153,6 +155,7 @@ module Zangther
         # Polar coordinations calculation
         self.x = x.to_i + (Math.cos(angle)*distance)
         self.y = y.to_i + (Math.sin(angle)*distance)
+        self.visible = true
         update
       end
     end
@@ -216,7 +219,6 @@ module Zangther
     def initialize(viewport, character = nil)
       super(viewport)
       @character = character
-      update
     end
     #--------------------------------------------------------------------------
     # * Update
@@ -803,6 +805,7 @@ module Zangther
       icons = Array.new
       RingMenu::Config::MENU_COMMAND.each do |command|
         icons.push(icon = Sprite_Icon.new)
+        icon.visible = false
         icon.bitmap = Cache.system("Iconset")
         index = command[:icon]
         x = index % 16 * 24
@@ -1112,4 +1115,3 @@ class Scene_Map
     Window_MenuCommand::init_command_position
   end
 end
-
