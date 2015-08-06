@@ -14,10 +14,11 @@
 #              with this ring menu.
 #             (#call_menu for Scene_Map and #return_scene for the others)
 #------------------------------------------------------------------------------
-# Version : 1.4.0 by Zangther
-#     If any questions, contact me at zangther@gmail.com
+# Version : 1.4.2 by Zangther
+#     If you have any questions, contact me at zangther[AT]gmail.com
 #------------------------------------------------------------------------------
 # Changelog :
+#     v1.4.2 : Menu text wasn't displayed after comming back from another menu
 #     v1.4.1 : Fix icons that were visible before being placed at the
 #                correct location
 #     v1.4.0 : Add speed configuration for menus
@@ -783,6 +784,7 @@ module Zangther
       super
       if @command_ring.closed?
         @command_ring.dispose
+        @current_text = nil
         change_scene
       else
         @command_ring.update(current_choice_disabled?)
