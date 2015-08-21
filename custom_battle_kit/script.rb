@@ -25,6 +25,21 @@ class GameBattle
   end
   
   
+  def win
+    terminate
+    $game_party.won_battles += 1
+  end
+  
+  def lose
+    terminate
+    $game_party.loss_battles += 1
+  end
+  
+  def run_away
+    terminate
+    $game_party.ran_away_battles += 1    
+  end
+
   private
   
   def start
