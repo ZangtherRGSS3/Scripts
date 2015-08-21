@@ -19,6 +19,12 @@ class GameBattle
 	
   
   attr_accessor :turn_count
+  
+  delegate :@enemies, :enemy_names
+  delegate :@enemies, :gold_total
+  delegate :@enemies, :exp_total
+  delegate :@enemies, :make_drop_items
+  
   private
   
   def start
