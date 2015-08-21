@@ -76,7 +76,7 @@ class Game_Enemies < Game_Unit
   # * Object Initialization
   #--------------------------------------------------------------------------
   def initialize(troop_id)
-    super
+    super()
     @troop_id = troop_id
     setup
   end
