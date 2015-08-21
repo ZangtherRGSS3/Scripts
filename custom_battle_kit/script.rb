@@ -11,9 +11,6 @@
 #==============================================================================
 
 class GameBattle
-	def update
-	end
-	
 	def terminate
 	end
 	
