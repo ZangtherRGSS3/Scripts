@@ -24,6 +24,7 @@ class GameBattle
   def start
     $game_system.battle_count += 1
     @turn_count = 0
+    $game_party.on_battle_start
   end
   
   def terminate
