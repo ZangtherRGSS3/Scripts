@@ -10,7 +10,7 @@
 #     v0.0.0 : Start Script
 #==============================================================================
 
-class GameBattle
+class Game_Battle
   
   attr_accessor :turn_count
   
@@ -175,7 +175,7 @@ class Game_Party
   alias_method :initialize_200815, :initialize
   attr_accessor :won_battles
   attr_accessor :loss_battles
-  attr_accessor :run_away_battles
+  attr_accessor :ran_away_battles
   
   def initialize
     initialize_200815
