@@ -40,6 +40,13 @@ class GameBattle
     $game_party.ran_away_battles += 1    
   end
 
+  #--------------------------------------------------------------------------
+  # * Get Multiplier for Gold
+  #--------------------------------------------------------------------------
+  def gold_rate
+    $game_party.gold_double? ? 2 : 1
+  end
+
   private
   
   def start
