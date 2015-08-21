@@ -11,9 +11,6 @@
 #==============================================================================
 
 class GameBattle
-	def terminate
-	end
-	
   
   attr_accessor :turn_count
   
@@ -28,6 +25,9 @@ class GameBattle
     @turn_count = 0
   end
   
+  def terminate
+  end
+
 end
 
 class Game_Enemies < Game_Unit
