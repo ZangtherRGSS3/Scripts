@@ -31,6 +31,7 @@ class GameBattle
     @turn_count = 0
   end
   
+end
 
 class Game_Enemies < Game_Unit
   #--------------------------------------------------------------------------
