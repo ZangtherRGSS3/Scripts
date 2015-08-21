@@ -11,14 +11,18 @@
 #==============================================================================
 
 class GameBattle
-	
-	def start
-	end
-	
 	def update
 	end
 	
 	def terminate
 	end
 	
+  
+  attr_accessor :turn_count
+  private
+  
+  def start
+    @turn_count = 0
+  end
+  
 end
