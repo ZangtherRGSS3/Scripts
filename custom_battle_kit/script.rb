@@ -22,6 +22,7 @@ class GameBattle
   private
   
   def start
+    $game_system.battle_count += 1
     @turn_count = 0
   end
   
