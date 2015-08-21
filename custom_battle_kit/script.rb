@@ -18,6 +18,12 @@ class GameBattle
   delegate :@enemies, :gold_total
   delegate :@enemies, :exp_total
   delegate :@enemies, :make_drop_items
+
+  def initialize(troop_id)
+    @troop_id = troop_id
+    start
+  end
+  
   
   private
   
@@ -25,6 +31,7 @@ class GameBattle
     $game_system.battle_count += 1
     @turn_count = 0
     $game_party.on_battle_start
+    @enemies = Game_Enemies.new(@troop_id)
   end
   
   def terminate
