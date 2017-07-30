@@ -3,5 +3,6 @@ Package.new(
 	version: vsn(0, 0, 0),
 	authors: {'Zangther' => 'zangther@gmail.com'},
 	components: ['script.rb'],
-	description: 'Add basic tools to create easily custom battle scenes.'
+	description: 'Add basic tools to create easily custom battle scenes.',
+	dependancies: ["RME"]
 )
