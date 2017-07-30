@@ -14,10 +14,12 @@
 #              with this ring menu.
 #             (#call_menu for Scene_Map and #return_scene for the others)
 #------------------------------------------------------------------------------
-# Version : 1.4.2 by Zangther
+# Version : 1.5.0 by Zangther
 #     If you have any questions, contact me at zangther[AT]gmail.com
 #------------------------------------------------------------------------------
 # Changelog :
+#     v1.5.0 : Add config to allow menu to be on the center of the screen
+#				 instead of the center of the player
 #     v1.4.2 : Menu text wasn't displayed after comming back from another menu
 #     v1.4.1 : Fix icons that were visible before being placed at the
 #                correct location
@@ -70,6 +72,8 @@ module Zangther
       RING_MENU_SPEED = 10
       # Hero menu spin speed
       HERO_MENU_SPEED = 10
+      # Center the ring menu on player ?
+      CENTER_ON_PLAYER = true
     end
     #==============================================================================
     # ** Settings
@@ -814,8 +818,13 @@ module Zangther
         y = (index / 16).truncate * 24
         icon.src_rect = Rect.new(x,y,24,24)
       end
-      x = $game_player.screen_x - 28
-      y = $game_player.screen_y - 44
+      if RingMenu::Config::CENTER_ON_PLAYER
+        x = $game_player.screen_x - 28
+        y = $game_player.screen_y - 44
+      else
+        x = Graphics.width / 2 - 28
+        y = Graphics.height / 2 - 44
+      end
       distance = RingMenu::Config::DISTANCE
       angle = RingMenu::Config::START_ANGLE
       speed = RingMenu::Config::RING_MENU_SPEED
@@ -829,8 +838,13 @@ module Zangther
       distance = RingMenu::Config::DISTANCE
       width = distance * 2
       @command_name.bitmap = Bitmap.new(width, 24)
-      @command_name.x = $game_player.screen_x  - distance
-      @command_name.y = $game_player.screen_y + distance
+      if RingMenu::Config::CENTER_ON_PLAYER
+        @command_name.x = $game_player.screen_x - distance
+        @command_name.y = $game_player.screen_y + distance
+      else
+        @command_name.x = Graphics.width / 2 - distance
+        @command_name.y = Graphics.height / 2 + distance
+      end
     end
     #--------------------------------------------------------------------------
     # * Update Command Selection
@@ -932,8 +946,13 @@ module Zangther
         char.set_graphic(actor.character_name,actor.character_index)
         Sprite_Character_Icon.new(@viewport, char)
       end
-      x = $game_player.screen_x - 16
-      y = $game_player.screen_y - 16
+      if RingMenu::Config::CENTER_ON_PLAYER
+        x = $game_player.screen_x - 16
+        y = $game_player.screen_y - 16
+      else
+        x = Graphics.width / 2 - 16
+        y = Graphics.height / 2 - 16
+      end
       distance = RingMenu::Config::DISTANCE
       angle = RingMenu::Config::START_ANGLE
       speed = RingMenu::Config::HERO_MENU_SPEED
@@ -948,8 +967,13 @@ module Zangther
       distance = RingMenu::Config::DISTANCE
       width = distance * 2
       @command_name.bitmap = Bitmap.new(width, 24)
-      @command_name.x = $game_player.screen_x - distance
-      @command_name.y = $game_player.screen_y + distance
+      if RingMenu::Config::CENTER_ON_PLAYER
+        @command_name.x = $game_player.screen_x - distance
+        @command_name.y = $game_player.screen_y + distance
+      else
+        @command_name.x = Graphics.width / 2 - distance
+        @command_name.y = Graphics.height / 2 + distance
+      end
     end
     #--------------------------------------------------------------------------
     # * Update Command Text
@@ -1012,8 +1036,13 @@ module Zangther
         char.set_graphic(actor.character_name,actor.character_index)
         Zangther::Sprite_Character_Icon.new(@viewport, char)
       end
-      x = $game_player.screen_x
-      y = $game_player.screen_y
+      if RingMenu::Config::CENTER_ON_PLAYER
+        x = $game_player.screen_x
+        y = $game_player.screen_y
+      else
+        x = Graphics.width / 2
+        y = Graphics.height / 2
+      end
       distance = Zangther::RingMenu::Config::DISTANCE
       angle = Zangther::RingMenu::Config::START_ANGLE
       @command_ring = Zangther::Spriteset_IconCrescent.new(x, y, icons)
