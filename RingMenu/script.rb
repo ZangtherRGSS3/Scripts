@@ -18,6 +18,7 @@
 #     If you have any questions, contact me at zangther[AT]gmail.com
 #------------------------------------------------------------------------------
 # Changelog :
+#     v1.5.1 : Fix bug that was preventing player to save
 #     v1.5.0 : Add config to allow menu to be on the center of the screen
 #				 instead of the center of the player
 #     v1.4.2 : Menu text wasn't displayed after comming back from another menu
