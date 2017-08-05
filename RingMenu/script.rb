@@ -86,29 +86,33 @@ module Zangther
         # * Is scene choice enabled ?
         #--------------------------------------------------------------------------
         def choice_enabled?(choice_name)
-          state = get[:choice_enabled][choice_name]
+          state = get(:choice_enabled)[choice_name]
           state.nil? ? true : state
         end
         #--------------------------------------------------------------------------
         # * Set if is scene choice is enabled or not ?
         #--------------------------------------------------------------------------
         def set_choice_state(choice_name, state)
-          get[:choice_enabled][choice_name] = state
+          get(:choice_enabled)[choice_name] = state
         end
         #--------------------------------------------------------------------------
         # * Get settings
         #--------------------------------------------------------------------------
-        def get
-          settings = $game_variables[Config::SETTINGS_VARIABLE]
-          (initialize_settings and return get) unless settings.is_a? Hash
-
-          settings
+        def get(choice)
+          init_settings_var unless settings_var.is_a?(Hash)
+          settings_var[choice] ||= {}
         end
         #--------------------------------------------------------------------------
-        # * Initialize settings with a hash if needed
+        # * Get settings var
         #--------------------------------------------------------------------------
-        def initialize_settings
-          $game_variables[Config::SETTINGS_VARIABLE] = Hash.new { |hash, key| hash[key] = {} }
+        def settings_var
+          $game_variables[Config::SETTINGS_VARIABLE]
+        end
+        #--------------------------------------------------------------------------
+        # * Init settings var
+        #--------------------------------------------------------------------------
+        def init_settings_var
+          $game_variables[Config::SETTINGS_VARIABLE] = {}
         end
       end
     end
